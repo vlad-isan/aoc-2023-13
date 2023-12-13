@@ -40,8 +40,12 @@ using PatternList = std::vector<Pattern>;
 
 
 uint64_t get_pattern_sum(const Pattern &pattern);
+uint64_t get_pattern_smudge_sum(const Pattern &pattern);
 bool is_row_reflection_point(const Row &row, size_t index);
 bool is_col_reflection_point(const Pattern &pattern, size_t col_index, size_t index);
+
+int is_row_reflection_smudge_point(const Row &row, size_t index);
+int is_col_reflection_smudge_point(const Pattern &pattern, size_t col_index, size_t index);
 
 int puzzle_sample_1(const std::string &base_file_path);
 
