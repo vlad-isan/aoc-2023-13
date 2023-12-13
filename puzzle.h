@@ -19,6 +19,30 @@
 
 #include "fmt/core.h"
 
+enum class PatternType {
+    ASH,
+    ROCK
+};
+
+const std::unordered_map<char, PatternType> pattern_map{
+    {'.', PatternType::ASH},
+    {'#', PatternType::ROCK}
+};
+
+const std::unordered_map<PatternType, char> pattern_map_reverse{
+    {PatternType::ASH, '.'},
+    {PatternType::ROCK, '#'}
+};
+
+using Row = std::vector<PatternType>;
+using Pattern = std::vector<Row>;
+using PatternList = std::vector<Pattern>;
+
+
+uint64_t get_pattern_sum(const Pattern &pattern);
+bool is_row_reflection_point(const Row &row, size_t index);
+bool is_col_reflection_point(const Pattern &pattern, size_t col_index, size_t index);
+
 int puzzle_sample_1(const std::string &base_file_path);
 
 int puzzle_sample_2(const std::string &base_file_path);
